@@ -8,7 +8,7 @@ namespace Keyword
 {
     internal class Conexao
     {
-        string connectionString = "Server=26.125.84.95;Database=mydatabase;Uid=root;Pwd=usbw;";
+        string connectionString = "Server=localhost;Database=db_keyword;Uid=root;Pwd=usbw;";
 
         public MySqlConnection AbrirConexao()
         {
@@ -27,7 +27,6 @@ namespace Keyword
                 Console.WriteLine("A conexão já está fechada");
             }
         }
-
 
 
 
