@@ -7,12 +7,9 @@ namespace Keyword
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnLogar_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(" joes alfredo sadawd");
-            //test2345
-            //edwdawdawdawdawdawdw
-            //alguma coisa
+
         }
     }
 }
