@@ -28,12 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
             txtUsuario = new TextBox();
             txtSenha = new TextBox();
             btnLogar = new Button();
             label1 = new Label();
             label2 = new Label();
+            epLogin = new ErrorProvider(components);
+            ((System.ComponentModel.ISupportInitialize)epLogin).BeginInit();
             SuspendLayout();
             // 
             // txtUsuario
@@ -93,6 +96,11 @@
             label2.TabIndex = 5;
             label2.Text = "Senha";
             // 
+            // epLogin
+            // 
+            epLogin.BlinkRate = 400;
+            epLogin.ContainerControl = this;
+            // 
             // Login
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -112,6 +120,7 @@
             MaximizeBox = false;
             Name = "Login";
             Text = "Login";
+            ((System.ComponentModel.ISupportInitialize)epLogin).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -124,5 +133,6 @@
         private Button btnLogar;
         private Label label1;
         private Label label2;
+        private ErrorProvider epLogin;
     }
 }

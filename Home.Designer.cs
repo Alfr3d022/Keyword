@@ -29,37 +29,37 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Home));
-            ptProdutos = new PictureBox();
-            ptEstoque = new PictureBox();
-            ((System.ComponentModel.ISupportInitialize)ptProdutos).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)ptEstoque).BeginInit();
+            pbProdutos = new PictureBox();
+            pbEstoque = new PictureBox();
+            ((System.ComponentModel.ISupportInitialize)pbProdutos).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pbEstoque).BeginInit();
             SuspendLayout();
             // 
-            // ptProdutos
+            // pbProdutos
             // 
-            ptProdutos.BackColor = Color.Transparent;
-            ptProdutos.BackgroundImage = Properties.Resources.produtos;
-            ptProdutos.BackgroundImageLayout = ImageLayout.Zoom;
-            ptProdutos.Cursor = Cursors.Hand;
-            ptProdutos.Location = new Point(12, 76);
-            ptProdutos.Name = "ptProdutos";
-            ptProdutos.Size = new Size(104, 35);
-            ptProdutos.TabIndex = 0;
-            ptProdutos.TabStop = false;
-            ptProdutos.Click += ptProdutos_Click;
+            pbProdutos.BackColor = Color.Transparent;
+            pbProdutos.BackgroundImage = Properties.Resources.produtos;
+            pbProdutos.BackgroundImageLayout = ImageLayout.Zoom;
+            pbProdutos.Cursor = Cursors.Hand;
+            pbProdutos.Location = new Point(12, 76);
+            pbProdutos.Name = "pbProdutos";
+            pbProdutos.Size = new Size(104, 35);
+            pbProdutos.TabIndex = 0;
+            pbProdutos.TabStop = false;
+            pbProdutos.Click += ptProdutos_Click;
             // 
-            // ptEstoque
+            // pbEstoque
             // 
-            ptEstoque.BackColor = Color.Transparent;
-            ptEstoque.BackgroundImage = (Image)resources.GetObject("ptEstoque.BackgroundImage");
-            ptEstoque.BackgroundImageLayout = ImageLayout.Zoom;
-            ptEstoque.Cursor = Cursors.Hand;
-            ptEstoque.Location = new Point(4, 139);
-            ptEstoque.Name = "ptEstoque";
-            ptEstoque.Size = new Size(112, 38);
-            ptEstoque.TabIndex = 1;
-            ptEstoque.TabStop = false;
-            ptEstoque.Click += ptEstoque_Click;
+            pbEstoque.BackColor = Color.Transparent;
+            pbEstoque.BackgroundImage = (Image)resources.GetObject("pbEstoque.BackgroundImage");
+            pbEstoque.BackgroundImageLayout = ImageLayout.Zoom;
+            pbEstoque.Cursor = Cursors.Hand;
+            pbEstoque.Location = new Point(4, 139);
+            pbEstoque.Name = "pbEstoque";
+            pbEstoque.Size = new Size(112, 38);
+            pbEstoque.TabIndex = 1;
+            pbEstoque.TabStop = false;
+            pbEstoque.Click += ptEstoque_Click;
             // 
             // Home
             // 
@@ -68,19 +68,19 @@
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(800, 450);
-            Controls.Add(ptEstoque);
-            Controls.Add(ptProdutos);
+            Controls.Add(pbEstoque);
+            Controls.Add(pbProdutos);
             FormBorderStyle = FormBorderStyle.FixedDialog;
             Name = "Home";
             Text = "Home";
-            ((System.ComponentModel.ISupportInitialize)ptProdutos).EndInit();
-            ((System.ComponentModel.ISupportInitialize)ptEstoque).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pbProdutos).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pbEstoque).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
 
-        private PictureBox ptProdutos;
-        private PictureBox ptEstoque;
+        private PictureBox pbProdutos;
+        private PictureBox pbEstoque;
     }
 }

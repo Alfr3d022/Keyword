@@ -45,6 +45,7 @@ namespace Keyword
                 {
                     if (reader.GetString(0) == "0")
                     {
+                        epLogin.SetError(txtUsuario, "Login ou senha incorretos");
                         //registro
                     }
                     else
@@ -63,10 +64,10 @@ namespace Keyword
                 MessageBox.Show(erro.ToString());
 
             }
-            finally 
+            finally
             {
                 // Fecha o leitor e a conexão
-                
+
                 new Conexao().FecharConexao(conexao);
             }
         }
