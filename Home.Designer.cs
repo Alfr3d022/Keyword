@@ -29,53 +29,52 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Home));
-            ptProdutos = new PictureBox();
-            ptEstoque = new PictureBox();
-            ((System.ComponentModel.ISupportInitialize)ptProdutos).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)ptEstoque).BeginInit();
-            SuspendLayout();
+            this.ptProdutos = new System.Windows.Forms.PictureBox();
+            this.ptEstoque = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.ptProdutos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptEstoque)).BeginInit();
+            this.SuspendLayout();
             // 
             // ptProdutos
             // 
-            ptProdutos.BackColor = Color.Transparent;
-            ptProdutos.BackgroundImage = Properties.Resources.produtos;
-            ptProdutos.BackgroundImageLayout = ImageLayout.Zoom;
-            ptProdutos.Cursor = Cursors.Hand;
-            ptProdutos.Location = new Point(12, 76);
-            ptProdutos.Name = "ptProdutos";
-            ptProdutos.Size = new Size(104, 35);
-            ptProdutos.TabIndex = 0;
-            ptProdutos.TabStop = false;
-            ptProdutos.Click += ptProdutos_Click;
+            this.ptProdutos.BackColor = System.Drawing.Color.Transparent;
+            this.ptProdutos.BackgroundImage = global::Keyword.Properties.Resources.produtos;
+            this.ptProdutos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.ptProdutos.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ptProdutos.Location = new System.Drawing.Point(12, 76);
+            this.ptProdutos.Name = "ptProdutos";
+            this.ptProdutos.Size = new System.Drawing.Size(104, 35);
+            this.ptProdutos.TabIndex = 0;
+            this.ptProdutos.TabStop = false;
             // 
             // ptEstoque
             // 
-            ptEstoque.BackColor = Color.Transparent;
-            ptEstoque.BackgroundImage = (Image)resources.GetObject("ptEstoque.BackgroundImage");
-            ptEstoque.BackgroundImageLayout = ImageLayout.Zoom;
-            ptEstoque.Cursor = Cursors.Hand;
-            ptEstoque.Location = new Point(4, 139);
-            ptEstoque.Name = "ptEstoque";
-            ptEstoque.Size = new Size(112, 38);
-            ptEstoque.TabIndex = 1;
-            ptEstoque.TabStop = false;
-            ptEstoque.Click += ptEstoque_Click;
+            this.ptEstoque.BackColor = System.Drawing.Color.Transparent;
+            this.ptEstoque.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("ptEstoque.BackgroundImage")));
+            this.ptEstoque.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.ptEstoque.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ptEstoque.Location = new System.Drawing.Point(4, 139);
+            this.ptEstoque.Name = "ptEstoque";
+            this.ptEstoque.Size = new System.Drawing.Size(112, 38);
+            this.ptEstoque.TabIndex = 1;
+            this.ptEstoque.TabStop = false;
             // 
             // Home
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
-            AutoScaleMode = AutoScaleMode.Font;
-            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
-            BackgroundImageLayout = ImageLayout.Stretch;
-            ClientSize = new Size(800, 450);
-            Controls.Add(ptEstoque);
-            Controls.Add(ptProdutos);
-            FormBorderStyle = FormBorderStyle.FixedDialog;
-            Name = "Home";
-            Text = "Home";
-            ((System.ComponentModel.ISupportInitialize)ptProdutos).EndInit();
-            ((System.ComponentModel.ISupportInitialize)ptEstoque).EndInit();
-            ResumeLayout(false);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(816, 462);
+            this.Controls.Add(this.ptEstoque);
+            this.Controls.Add(this.ptProdutos);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.Name = "Home";
+            this.Text = "Home";
+            ((System.ComponentModel.ISupportInitialize)(this.ptProdutos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptEstoque)).EndInit();
+            this.ResumeLayout(false);
+
         }
 
         #endregion
