@@ -9,7 +9,7 @@ namespace Keyword
 {
     internal class Conexao
     {
-        string connectionString = "Server=localhost;Database=db_keyword;Uid=root;Pwd=usbw;";
+        string connectionString = "Server=26.234.6.176;Database=db_keyword;Uid=externo;Pwd=;";
 
         public MySqlConnection AbrirConexao()
         {
