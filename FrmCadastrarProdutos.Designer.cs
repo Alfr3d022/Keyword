@@ -137,11 +137,12 @@
             pbVoltarHome.BackgroundImage = (Image)resources.GetObject("pbVoltarHome.BackgroundImage");
             pbVoltarHome.BackgroundImageLayout = ImageLayout.Stretch;
             pbVoltarHome.Image = (Image)resources.GetObject("pbVoltarHome.Image");
-            pbVoltarHome.Location = new Point(12, 12);
+            pbVoltarHome.Location = new Point(0, 56);
             pbVoltarHome.Name = "pbVoltarHome";
-            pbVoltarHome.Size = new Size(63, 44);
+            pbVoltarHome.Size = new Size(70, 29);
             pbVoltarHome.TabIndex = 9;
             pbVoltarHome.TabStop = false;
+            pbVoltarHome.Click += pbVoltarHome_Click_1;
             // 
             // FrmCadastrarProdutos
             // 

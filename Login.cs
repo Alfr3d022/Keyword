@@ -1,4 +1,7 @@
+using Google.Protobuf.WellKnownTypes;
 using MySql.Data.MySqlClient;
+using System.Security.Cryptography.X509Certificates;
+using System.Windows.Forms;
 
 namespace Keyword
 {
@@ -8,6 +11,7 @@ namespace Keyword
         public Login()
         {
             InitializeComponent();
+            string usuario = txtUsuario.Text;
         }
 
         private void btnLogar_Click(object sender, EventArgs e)
@@ -26,6 +30,8 @@ namespace Keyword
 
             string usuario = txtUsuario.Text;
             string senha = txtSenha.Text;
+            
+
 
             // Abre a conexão
             MySqlConnection conexao = new Conexao().AbrirConexao();
