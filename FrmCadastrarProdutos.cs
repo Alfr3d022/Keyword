@@ -13,6 +13,8 @@ namespace Keyword
 {
     public partial class FrmCadastrarProdutos : Form
     {
+        Thread th;
+
         public FrmCadastrarProdutos()
         {
             InitializeComponent();
@@ -93,6 +95,18 @@ namespace Keyword
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void pbVoltarHome_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            th = new Thread(voltarHome);
+            th.SetApartmentState(ApartmentState.STA);
+            th.Start();
+        }
+        private void voltarHome()
+        {
+            Application.Run(new Home());
         }
     }
 }

@@ -22,17 +22,26 @@ namespace Keyword
         private void ptProdutos_Click(object sender, EventArgs e)
         {
             this.Close();
-            th = new Thread(abrirJanela);
+            th = new Thread(abrirJanelaProdutos);
             th.SetApartmentState(ApartmentState.STA);
             th.Start();
 
         }
-        private void abrirJanela(object obj)
+        private void abrirJanelaProdutos(object obj)
         {
             Application.Run(new FrmCadastrarProdutos());
         }
         private void ptEstoque_Click(object sender, EventArgs e)
         {
+            this.Close();
+            th = new Thread(abrirJanelaMovimentacao);
+            th.SetApartmentState(ApartmentState.STA);
+            th.Start();
+        }
+
+        private void abrirJanelaMovimentacao() 
+        {
+            Application.Run(new Movimentacao());
 
         }
     }
