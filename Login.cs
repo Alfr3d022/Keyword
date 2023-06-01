@@ -16,21 +16,10 @@ namespace Keyword
 
         private void btnLogar_Click(object sender, EventArgs e)
         {
-            /*
-
-            // Abre a conexão
-            MySqlConnection conexao = new Conexao().AbrirConexao();
-
-            // Insere no banco
-            string insere = "INSERT INTO tab_login (id, login, senha) " +
-                "VALUES(null,'"+usuario+"','"+senha+"')";
-            MySqlCommand command = new MySqlCommand(insere, conexao);
-
-            command.ExecuteNonQuery();*/
 
             string usuario = txtUsuario.Text;
             string senha = txtSenha.Text;
-            
+            string idUsuario;
 
 
             // Abre a conexão
@@ -39,7 +28,7 @@ namespace Keyword
             try
             {
                 // Consulta no banco
-                string query = "SELECT COUNT(id) as quantidade FROM tab_login WHERE login = @login AND senha = @senha";
+                string query = "SELECT COUNT(id) as quantidade, id FROM tab_login WHERE login = @login AND senha = @senha";
                 MySqlCommand command = new MySqlCommand(query, conexao);
                 command.Parameters.AddWithValue("@login", usuario);
                 command.Parameters.AddWithValue("@senha", senha);
@@ -48,6 +37,7 @@ namespace Keyword
 
                 while (reader.Read())
                 {
+                    idUsuario = reader.GetString(1);
                     if (reader.GetString(0) == "0")
                     {
                         epLogin.SetError(txtUsuario, "Login ou senha incorretos");
@@ -59,7 +49,9 @@ namespace Keyword
                         th = new Thread(abrirJanela);
                         th.SetApartmentState(ApartmentState.STA);
                         th.Start();
+                        SessaoUsuario.IniciarSessao(usuario, idUsuario);
                     }
+                    
                 }
 
                 reader.Close();
@@ -72,7 +64,6 @@ namespace Keyword
             finally
             {
                 // Fecha o leitor e a conexão
-
                 new Conexao().FecharConexao(conexao);
             }
         }

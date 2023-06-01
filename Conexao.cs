@@ -28,10 +28,5 @@ namespace Keyword
                 Console.WriteLine("A conexão já está fechada");
             }
         }
-
-
-
-
-
     }
 }

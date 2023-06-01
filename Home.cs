@@ -31,7 +31,7 @@ namespace Keyword
         {
             Application.Run(new FrmCadastrarProdutos());
         }
-        private void ptEstoque_Click(object sender, EventArgs e)
+        private void pbEstoque_Click(object sender, EventArgs e)
         {
             this.Close();
             th = new Thread(abrirJanelaMovimentacao);
@@ -42,6 +42,19 @@ namespace Keyword
         private void abrirJanelaMovimentacao() 
         {
             Application.Run(new Movimentacao());
+
+        }
+
+        private void pbHistorico_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            th = new Thread(abrirJanelaHistorico);
+            th.SetApartmentState(ApartmentState.STA);
+            th.Start();
+        }
+        private void abrirJanelaHistorico()
+        {
+            Application.Run(new FrmHistorico());
 
         }
     }
