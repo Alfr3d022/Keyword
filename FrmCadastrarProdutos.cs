@@ -27,35 +27,30 @@ namespace Keyword
         }
         private void AutoCompleteGet()
         {
-            MySqlConnection conexao = new Conexao().AbrirConexao();
+            
             try
             {
-                // Consulta no banco
-                string query = "select distinct categoria_prod as categorias from tab_produtos";
-                MySqlCommand command = new MySqlCommand(query, conexao);
-                MySqlDataReader reader = command.ExecuteReader();
-                List<string> valores = new List<string>();
-                while (reader.Read())
+                using (MySqlConnection conexao = Conexao.Instance.ObterConexao())
                 {
-                    valores.Add(reader.GetString("categorias"));
+                    string query = "select distinct categoria_prod as categorias from tab_produtos";
+                    MySqlCommand command = new MySqlCommand(query, conexao);
+                    MySqlDataReader reader = command.ExecuteReader();
+                    List<string> valores = new List<string>();
+                    while (reader.Read())
+                    {
+                        valores.Add(reader.GetString("categorias"));
+                    }
+                    string[] categoriaProd = valores.ToArray();
+                    var autoCompleteTxtCategoria = new AutoCompleteStringCollection();
+                    autoCompleteTxtCategoria.AddRange(categoriaProd);
+                    txtCategoriaProd.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+                    txtCategoriaProd.AutoCompleteSource = AutoCompleteSource.CustomSource;
+                    txtCategoriaProd.AutoCompleteCustomSource = autoCompleteTxtCategoria;
                 }
-                string[] categoriaProd = valores.ToArray();
-                var autoCompleteTxtCategoria = new AutoCompleteStringCollection();
-                autoCompleteTxtCategoria.AddRange(categoriaProd);
-                txtCategoriaProd.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
-                txtCategoriaProd.AutoCompleteSource = AutoCompleteSource.CustomSource;
-                txtCategoriaProd.AutoCompleteCustomSource = autoCompleteTxtCategoria;
-                reader.Close();
             }
             catch (Exception erro)
             {
                 MessageBox.Show(erro.ToString());
-            }
-            finally
-            {
-                // Fecha o leitor e a conexão
-
-                new Conexao().FecharConexao(conexao);
             }
         }
 
@@ -64,17 +59,13 @@ namespace Keyword
             string CategoriaProd = txtCategoriaProd.Text;
             string DescProdutos = txtDescProdutos.Text;
             string Unidade = cbUnidade.Text;
-            string NomeProd = txtNomeProd.Text;
-
-
+            string NomeProd = txtNomeProd.Text;                     
             try
             {
-                MySqlConnection conexao = new Conexao().AbrirConexao();
+                string cmd23 = "INSERT INTO `db_keyword`.`tab_produtos` VALUES (default,@nmproduto,@unidade,@descprodutos,default,@categoria)";
 
-                try
+                using (MySqlConnection conexao = Conexao.Instance.ObterConexao())
                 {
-
-                    string cmd23 = "INSERT INTO `db_keyword`.`tab_produtos` VALUES (default,@nmproduto,@unidade,@descprodutos,default,@categoria)";
 
                     MySqlCommand cmd2 = new MySqlCommand(cmd23, conexao);
                     cmd2.Parameters.AddWithValue("@categoria", CategoriaProd);
@@ -82,19 +73,13 @@ namespace Keyword
                     cmd2.Parameters.AddWithValue("@unidade", Unidade);
                     cmd2.Parameters.AddWithValue("@nmproduto", NomeProd);
                     cmd2.ExecuteNonQuery();
-                    MessageBox.Show("Produto Salvo com Sucesso");
-                    conexao.Close();
-                }
-                catch (MySql.Data.MySqlClient.MySqlException)
-                {
-                    return;
-                }
-
+                }                    
+                MessageBox.Show("Produto Salvo com Sucesso");                   
             }
-            catch (Exception ex)
+            catch (MySql.Data.MySqlClient.MySqlException)
             {
-                MessageBox.Show(ex.Message);
-            }
+                return;
+            }            
         }
         private void pbVoltarHome_Click_1(object sender, EventArgs e)
         {

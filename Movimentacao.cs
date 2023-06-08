@@ -40,23 +40,25 @@ namespace Keyword
             string tipoMov = cbTipoMovimentacao.Text;
             string txtObs = rTextDescricao.Text;
 
-            MySqlConnection conexao = new Conexao().AbrirConexao();
+            
 
 
             if (ValidaCampos())
             {
                 try
                 {
-                    string query = "INSERT INTO `db_keyword`.`tab_movimentacao` VALUES (default,@tipoMov,@qtdProduto,default,@login,@id,@obs)";
-                    MySqlCommand command = new MySqlCommand(query, conexao);
-                    command.Parameters.AddWithValue("@id", codProduto);
-                    command.Parameters.AddWithValue("@tipoMov", tipoMov);
-                    command.Parameters.AddWithValue("@qtdProduto", qtdProduto);
-                    command.Parameters.AddWithValue("@login", SessaoUsuario.Usuario);
-                    command.Parameters.AddWithValue("@obs", txtObs);
-                    command.ExecuteNonQuery();
+                    using (MySqlConnection conexao = Conexao.Instance.ObterConexao())
+                    {
+                        string query = "INSERT INTO `db_keyword`.`tab_movimentacao` VALUES (default,@tipoMov,@qtdProduto,default,@login,@id,@obs)";
+                        MySqlCommand command = new MySqlCommand(query, conexao);
+                        command.Parameters.AddWithValue("@id", codProduto);
+                        command.Parameters.AddWithValue("@tipoMov", tipoMov);
+                        command.Parameters.AddWithValue("@qtdProduto", qtdProduto);
+                        command.Parameters.AddWithValue("@login", SessaoUsuario.Usuario);
+                        command.Parameters.AddWithValue("@obs", txtObs);
+                        command.ExecuteNonQuery();
+                    }                    
                     MessageBox.Show("Produto adicionado com Sucesso!");
-                    conexao.Close();
                 }
                 catch (MySql.Data.MySqlClient.MySqlException)
                 {
@@ -68,8 +70,6 @@ namespace Keyword
                 MessageBox.Show("Produto inválido, por favor use um produto criado");
             }
 
-
-
         }
         //Metodo para validar todos os campos, porém, só fiz para o produto, tem que fazer para os outros txts
         public bool ValidaCampos()
@@ -78,9 +78,8 @@ namespace Keyword
             string cdProduto = txtCodProduto.Text;
             string query = "SELECT COUNT(*) FROM tab_produtos WHERE cd_produto = @codProduto";
             //Valida txt produto com o banco
-            using (MySqlConnection conn = new Conexao().AbrirConexao())
-            {
-                
+            using (MySqlConnection conn = Conexao.Instance.ObterConexao())     
+            {                
                 using (MySqlCommand cmd = new MySqlCommand(query, conn))
                 {
                     cmd.Parameters.AddWithValue("@codProduto", cdProduto);

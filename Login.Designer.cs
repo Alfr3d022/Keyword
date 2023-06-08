@@ -28,101 +28,102 @@
         /// </summary>
         private void InitializeComponent()
         {
-            components = new System.ComponentModel.Container();
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
-            txtUsuario = new TextBox();
-            txtSenha = new TextBox();
-            btnLogar = new Button();
-            label1 = new Label();
-            label2 = new Label();
-            epLogin = new ErrorProvider(components);
-            ((System.ComponentModel.ISupportInitialize)epLogin).BeginInit();
-            SuspendLayout();
+            this.txtUsuario = new System.Windows.Forms.TextBox();
+            this.txtSenha = new System.Windows.Forms.TextBox();
+            this.btnLogar1 = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.epLogin = new System.Windows.Forms.ErrorProvider(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.epLogin)).BeginInit();
+            this.SuspendLayout();
             // 
             // txtUsuario
             // 
-            txtUsuario.Location = new Point(296, 208);
-            txtUsuario.Name = "txtUsuario";
-            txtUsuario.Size = new Size(207, 23);
-            txtUsuario.TabIndex = 1;
+            this.txtUsuario.Location = new System.Drawing.Point(296, 208);
+            this.txtUsuario.Name = "txtUsuario";
+            this.txtUsuario.Size = new System.Drawing.Size(207, 23);
+            this.txtUsuario.TabIndex = 1;
             // 
             // txtSenha
             // 
-            txtSenha.AccessibleDescription = "";
-            txtSenha.Location = new Point(296, 254);
-            txtSenha.Name = "txtSenha";
-            txtSenha.Size = new Size(207, 23);
-            txtSenha.TabIndex = 2;
-            txtSenha.Tag = "";
-            txtSenha.UseSystemPasswordChar = true;
+            this.txtSenha.AccessibleDescription = "";
+            this.txtSenha.Location = new System.Drawing.Point(296, 254);
+            this.txtSenha.Name = "txtSenha";
+            this.txtSenha.Size = new System.Drawing.Size(207, 23);
+            this.txtSenha.TabIndex = 2;
+            this.txtSenha.Tag = "";
+            this.txtSenha.UseSystemPasswordChar = true;
             // 
-            // btnLogar
+            // btnLogar1
             // 
-            btnLogar.BackColor = Color.FromArgb(20, 10, 137);
-            btnLogar.BackgroundImage = Properties.Resources.blue;
-            btnLogar.BackgroundImageLayout = ImageLayout.Stretch;
-            btnLogar.FlatStyle = FlatStyle.Popup;
-            btnLogar.ForeColor = Color.White;
-            btnLogar.Location = new Point(428, 283);
-            btnLogar.Margin = new Padding(0);
-            btnLogar.Name = "btnLogar";
-            btnLogar.Size = new Size(75, 23);
-            btnLogar.TabIndex = 3;
-            btnLogar.Text = "Login";
-            btnLogar.UseVisualStyleBackColor = false;
-            btnLogar.Click += btnLogar_Click;
+            this.btnLogar1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(10)))), ((int)(((byte)(137)))));
+            this.btnLogar1.BackgroundImage = global::Keyword.Properties.Resources.blue;
+            this.btnLogar1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnLogar1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnLogar1.ForeColor = System.Drawing.Color.White;
+            this.btnLogar1.Location = new System.Drawing.Point(428, 283);
+            this.btnLogar1.Margin = new System.Windows.Forms.Padding(0);
+            this.btnLogar1.Name = "btnLogar1";
+            this.btnLogar1.Size = new System.Drawing.Size(75, 23);
+            this.btnLogar1.TabIndex = 3;
+            this.btnLogar1.Text = "Login";
+            this.btnLogar1.UseVisualStyleBackColor = false;
+            this.btnLogar1.Click += new System.EventHandler(this.btnLogar1_Click);
             // 
             // label1
             // 
-            label1.AutoSize = true;
-            label1.BackColor = Color.Transparent;
-            label1.Font = new Font("Arial Unicode MS", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.ForeColor = SystemColors.ButtonHighlight;
-            label1.Location = new Point(296, 190);
-            label1.Name = "label1";
-            label1.Size = new Size(43, 16);
-            label1.TabIndex = 4;
-            label1.Text = "Login";
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label1.Location = new System.Drawing.Point(296, 190);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(43, 15);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "Login";
             // 
             // label2
             // 
-            label2.AutoSize = true;
-            label2.BackColor = Color.Transparent;
-            label2.Font = new Font("Arial Unicode MS", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            label2.ForeColor = SystemColors.ButtonHighlight;
-            label2.Location = new Point(296, 235);
-            label2.Name = "label2";
-            label2.Size = new Size(48, 16);
-            label2.TabIndex = 5;
-            label2.Text = "Senha";
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label2.Location = new System.Drawing.Point(296, 235);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(48, 15);
+            this.label2.TabIndex = 5;
+            this.label2.Text = "Senha";
             // 
             // epLogin
             // 
-            epLogin.BlinkRate = 400;
-            epLogin.ContainerControl = this;
+            this.epLogin.BlinkRate = 400;
+            this.epLogin.ContainerControl = this;
             // 
             // Login
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
-            AutoScaleMode = AutoScaleMode.Font;
-            BackColor = SystemColors.Control;
-            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
-            BackgroundImageLayout = ImageLayout.Stretch;
-            ClientSize = new Size(800, 450);
-            Controls.Add(label2);
-            Controls.Add(label1);
-            Controls.Add(btnLogar);
-            Controls.Add(txtSenha);
-            Controls.Add(txtUsuario);
-            DoubleBuffered = true;
-            FormBorderStyle = FormBorderStyle.FixedSingle;
-            Icon = (Icon)resources.GetObject("$this.Icon");
-            MaximizeBox = false;
-            Name = "Login";
-            Text = "Login";
-            ((System.ComponentModel.ISupportInitialize)epLogin).EndInit();
-            ResumeLayout(false);
-            PerformLayout();
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.Control;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.btnLogar1);
+            this.Controls.Add(this.txtSenha);
+            this.Controls.Add(this.txtUsuario);
+            this.DoubleBuffered = true;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.Name = "Login";
+            this.Text = "Login";
+            ((System.ComponentModel.ISupportInitialize)(this.epLogin)).EndInit();
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion
@@ -130,7 +131,7 @@
         private Button btnLogin;
         private TextBox txtUsuario;
         private TextBox txtSenha;
-        private Button btnLogar;
+        private Button btnLogar1;
         private Label label1;
         private Label label2;
         private ErrorProvider epLogin;

@@ -28,11 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmHistorico));
             this.label1 = new System.Windows.Forms.Label();
-            this.dtGridHistorico = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.dtGridHistorico)).BeginInit();
+            this.dtGridMov = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dtGridMov)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -47,25 +46,18 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Movimentação de produtos";
             // 
-            // dtGridHistorico
+            // dtGridMov
             // 
-            this.dtGridHistorico.BackgroundColor = System.Drawing.SystemColors.Control;
-            this.dtGridHistorico.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dtGridHistorico.DefaultCellStyle = dataGridViewCellStyle1;
-            this.dtGridHistorico.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dtGridHistorico.Location = new System.Drawing.Point(12, 132);
-            this.dtGridHistorico.Name = "dtGridHistorico";
-            this.dtGridHistorico.ReadOnly = true;
-            this.dtGridHistorico.RowTemplate.Height = 25;
-            this.dtGridHistorico.Size = new System.Drawing.Size(1010, 517);
-            this.dtGridHistorico.TabIndex = 1;
+            this.dtGridMov.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dtGridMov.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
+            this.dtGridMov.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtGridMov.Location = new System.Drawing.Point(12, 110);
+            this.dtGridMov.Name = "dtGridMov";
+            this.dtGridMov.ReadOnly = true;
+            this.dtGridMov.RowHeadersVisible = false;
+            this.dtGridMov.RowTemplate.Height = 25;
+            this.dtGridMov.Size = new System.Drawing.Size(1010, 539);
+            this.dtGridMov.TabIndex = 1;
             // 
             // FrmHistorico
             // 
@@ -74,13 +66,13 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1034, 661);
-            this.Controls.Add(this.dtGridHistorico);
+            this.Controls.Add(this.dtGridMov);
             this.Controls.Add(this.label1);
             this.DoubleBuffered = true;
             this.Name = "FrmHistorico";
             this.Text = "FrmHistorico";
             this.Load += new System.EventHandler(this.FrmHistorico_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dtGridHistorico)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtGridMov)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -89,6 +81,6 @@
         #endregion
 
         private Label label1;
-        private DataGridView dtGridHistorico;
+        private DataGridView dtGridMov;
     }
 }

@@ -20,18 +20,41 @@ namespace Keyword
 
         private void FrmHistorico_Load(object sender, EventArgs e)
         {
-            MySqlDataReader reader = listarUsuario();
-            DataTable dt = new DataTable();
-            dt.Load(reader);
-            dtGridHistorico.DataSource = dt;
+            dtGridMov.DataSource = listarUsuario();
         }
-        private MySqlDataReader listarUsuario()
+        private DataTable listarUsuario()
         {
-            MySqlConnection conn = new Conexao().AbrirConexao();
-            string query = "Select * from tab_movimentacao order by data_stamp desc";
-            MySqlCommand cmd = new MySqlCommand(query, conn);
-            cmd.CommandText = query;
-            return cmd.ExecuteReader();
+            using (MySqlConnection conexao = Conexao.Instance.ObterConexao())
+            {
+                string query = "select tp.cd_produto as 'Cód. produto',tp.nm_produto as 'Nome produto', tm.quantidade as 'Qtd. movimentação', tp.un as 'Unidade', tm.obs_mov as 'Obs. movimentação',  tm.usuario as 'Modificado por' ,tm.data_stamp as 'Data mov.' from tab_movimentacao tm join tab_produtos tp on tp.cd_produto = tm.id_produto order by tm.data_stamp desc";
+                MySqlCommand cmd = new MySqlCommand(query, conexao);
+
+                using (MySqlDataReader reader = cmd.ExecuteReader())
+                {
+                    DataTable dt = new DataTable();
+
+                    for (int i = 0; i < reader.FieldCount; i++)
+                    {
+                        dt.Columns.Add(reader.GetName(i), reader.GetFieldType(i));
+                    }
+                    while (reader.Read())
+                    {
+                        DataRow row = dt.NewRow();
+
+                        for (int i = 0; i < reader.FieldCount; i++)
+                        {
+                            row[i] = reader.GetValue(i);
+                        }
+
+                        dt.Rows.Add(row);                        
+                    }
+
+                    return dt;
+                }
+            }
         }
+
+
+
     }
 }

@@ -7,26 +7,39 @@ using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
 namespace Keyword
 {
-    internal class Conexao
+    public class Conexao
     {
-        string connectionString = "Server=26.234.6.176;Database=db_keyword;Uid=externo;Pwd=;";
+        private static Conexao instance = null;
+        private string connectionString = "Server=26.234.6.176;Database=db_keyword;Uid=externo;Pwd=;";
 
-        public MySqlConnection AbrirConexao()
+        private Conexao() { }
+
+        public static Conexao Instance
         {
-            MySqlConnection conexao = new MySqlConnection(connectionString);
-            conexao.Open();
-            return conexao;
-        }
-        public void FecharConexao(MySqlConnection conexao)
-        {
-            if (conexao != null && conexao.State == System.Data.ConnectionState.Open)
+            get
             {
-                conexao.Close();
+                if (instance == null)
+                {
+                    instance = new Conexao();
+                }
+                return instance;
             }
-            else
+        }
+
+        public MySqlConnection ObterConexao()
+        {
+            try
             {
-                Console.WriteLine("A conexão já está fechada");
+                MySqlConnection conexao = new MySqlConnection(connectionString);
+                conexao.Open();
+                return conexao;
+            }
+            catch (MySqlException ex)
+            {
+                Console.WriteLine(ex.Message);
+                return null;
             }
         }
     }
+
 }
