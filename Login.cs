@@ -14,12 +14,6 @@ namespace Keyword
             string usuario = txtUsuario.Text;
         }
 
-        private void abrirJanela(object obj)
-        {
-            Application.Run(new Home());
-        }
-
-
         private void btnLogar1_Click(object sender, EventArgs e)
         {
 
@@ -27,8 +21,8 @@ namespace Keyword
             string senha = txtSenha.Text;
             string idUsuario;
 
-            
-                // Abre a conexão
+
+            // Abre a conexão
 
             try
             {
@@ -59,14 +53,32 @@ namespace Keyword
                         }
                     }
                 }
-                    // Consulta no banco
-                  
+                // Consulta no banco
+
             }
             catch (Exception erro)
             {
                 MessageBox.Show(erro.ToString());
 
             }
+        }
+
+        private void abrirJanela(object obj)
+        {
+            Application.Run(new Home());
+        }
+
+        private void txtRegistrar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            th = new Thread(abrirRegistro);
+            th.SetApartmentState(ApartmentState.STA);
+            th.Start();
+        }
+
+        private void abrirRegistro()
+        {
+            Application.Run(new Registro());
         }
     }
 }

@@ -13,6 +13,7 @@ namespace Keyword
 {
     public partial class FrmHistorico : Form
     {
+        Thread th;
         public FrmHistorico()
         {
             InitializeComponent();
@@ -46,7 +47,7 @@ namespace Keyword
                             row[i] = reader.GetValue(i);
                         }
 
-                        dt.Rows.Add(row);                        
+                        dt.Rows.Add(row);
                     }
 
                     return dt;
@@ -54,7 +55,16 @@ namespace Keyword
             }
         }
 
-
-
+        private void pbVoltarHome_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            th = new Thread(voltarHome);
+            th.SetApartmentState(ApartmentState.STA);
+            th.Start();
+        }
+        private void voltarHome()
+        {
+            Application.Run(new Home());
+        }
     }
 }

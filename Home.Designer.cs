@@ -29,66 +29,68 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Home));
-            this.pbProdutos = new System.Windows.Forms.PictureBox();
-            this.pbEstoque = new System.Windows.Forms.PictureBox();
-            this.pbHistorico = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pbProdutos)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbEstoque)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbHistorico)).BeginInit();
-            this.SuspendLayout();
+            pbProdutos = new PictureBox();
+            pbEstoque = new PictureBox();
+            pbHistorico = new PictureBox();
+            ((System.ComponentModel.ISupportInitialize)pbProdutos).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pbEstoque).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pbHistorico).BeginInit();
+            SuspendLayout();
             // 
             // pbProdutos
             // 
-            this.pbProdutos.BackColor = System.Drawing.Color.Transparent;
-            this.pbProdutos.BackgroundImage = global::Keyword.Properties.Resources.produtos;
-            this.pbProdutos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pbProdutos.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pbProdutos.Location = new System.Drawing.Point(12, 76);
-            this.pbProdutos.Name = "pbProdutos";
-            this.pbProdutos.Size = new System.Drawing.Size(104, 35);
-            this.pbProdutos.TabIndex = 0;
-            this.pbProdutos.TabStop = false;
+            pbProdutos.BackColor = Color.Transparent;
+            pbProdutos.BackgroundImage = Properties.Resources.produtos;
+            pbProdutos.BackgroundImageLayout = ImageLayout.Zoom;
+            pbProdutos.Cursor = Cursors.Hand;
+            pbProdutos.Location = new Point(4, 79);
+            pbProdutos.Name = "pbProdutos";
+            pbProdutos.Size = new Size(112, 35);
+            pbProdutos.TabIndex = 0;
+            pbProdutos.TabStop = false;
+            pbProdutos.Click += pbProdutos_Click;
             // 
             // pbEstoque
             // 
-            this.pbEstoque.BackColor = System.Drawing.Color.Transparent;
-            this.pbEstoque.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pbEstoque.BackgroundImage")));
-            this.pbEstoque.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pbEstoque.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pbEstoque.Location = new System.Drawing.Point(4, 139);
-            this.pbEstoque.Name = "pbEstoque";
-            this.pbEstoque.Size = new System.Drawing.Size(112, 38);
-            this.pbEstoque.TabIndex = 1;
-            this.pbEstoque.TabStop = false;
-            this.pbEstoque.Click += new System.EventHandler(this.pbEstoque_Click);
+            pbEstoque.BackColor = Color.Transparent;
+            pbEstoque.BackgroundImage = (Image)resources.GetObject("pbEstoque.BackgroundImage");
+            pbEstoque.BackgroundImageLayout = ImageLayout.Zoom;
+            pbEstoque.Cursor = Cursors.Hand;
+            pbEstoque.Location = new Point(4, 136);
+            pbEstoque.Name = "pbEstoque";
+            pbEstoque.Size = new Size(112, 41);
+            pbEstoque.TabIndex = 1;
+            pbEstoque.TabStop = false;
+            pbEstoque.Click += pbEstoque_Click;
             // 
             // pbHistorico
             // 
-            this.pbHistorico.Location = new System.Drawing.Point(4, 204);
-            this.pbHistorico.Name = "pbHistorico";
-            this.pbHistorico.Size = new System.Drawing.Size(112, 36);
-            this.pbHistorico.TabIndex = 2;
-            this.pbHistorico.TabStop = false;
-            this.pbHistorico.Click += new System.EventHandler(this.pbHistorico_Click);
+            pbHistorico.BackgroundImage = (Image)resources.GetObject("pbHistorico.BackgroundImage");
+            pbHistorico.BackgroundImageLayout = ImageLayout.Stretch;
+            pbHistorico.Location = new Point(4, 194);
+            pbHistorico.Name = "pbHistorico";
+            pbHistorico.Size = new Size(120, 46);
+            pbHistorico.TabIndex = 2;
+            pbHistorico.TabStop = false;
+            pbHistorico.Click += pbHistorico_Click;
             // 
             // Home
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.pbHistorico);
-            this.Controls.Add(this.pbEstoque);
-            this.Controls.Add(this.pbProdutos);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.Name = "Home";
-            this.Text = "Home";
-            ((System.ComponentModel.ISupportInitialize)(this.pbProdutos)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbEstoque)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbHistorico)).EndInit();
-            this.ResumeLayout(false);
-
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
+            BackgroundImageLayout = ImageLayout.Stretch;
+            ClientSize = new Size(800, 450);
+            Controls.Add(pbHistorico);
+            Controls.Add(pbEstoque);
+            Controls.Add(pbProdutos);
+            FormBorderStyle = FormBorderStyle.FixedDialog;
+            Name = "Home";
+            Text = "Home";
+            ((System.ComponentModel.ISupportInitialize)pbProdutos).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pbEstoque).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pbHistorico).EndInit();
+            ResumeLayout(false);
         }
 
         #endregion

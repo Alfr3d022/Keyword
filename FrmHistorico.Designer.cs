@@ -29,58 +29,75 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmHistorico));
-            this.label1 = new System.Windows.Forms.Label();
-            this.dtGridMov = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.dtGridMov)).BeginInit();
-            this.SuspendLayout();
+            label1 = new Label();
+            dtGridMov = new DataGridView();
+            pbVoltarHome = new PictureBox();
+            ((System.ComponentModel.ISupportInitialize)dtGridMov).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pbVoltarHome).BeginInit();
+            SuspendLayout();
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 22F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label1.Location = new System.Drawing.Point(306, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(387, 41);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Movimentação de produtos";
+            label1.AutoSize = true;
+            label1.BackColor = Color.Transparent;
+            label1.Font = new Font("Segoe UI", 22F, FontStyle.Regular, GraphicsUnit.Point);
+            label1.ForeColor = SystemColors.ButtonFace;
+            label1.Location = new Point(306, 9);
+            label1.Name = "label1";
+            label1.Size = new Size(387, 41);
+            label1.TabIndex = 0;
+            label1.Text = "Movimentação de produtos";
             // 
             // dtGridMov
             // 
-            this.dtGridMov.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            this.dtGridMov.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
-            this.dtGridMov.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtGridMov.Location = new System.Drawing.Point(12, 110);
-            this.dtGridMov.Name = "dtGridMov";
-            this.dtGridMov.ReadOnly = true;
-            this.dtGridMov.RowHeadersVisible = false;
-            this.dtGridMov.RowTemplate.Height = 25;
-            this.dtGridMov.Size = new System.Drawing.Size(1010, 539);
-            this.dtGridMov.TabIndex = 1;
+            dtGridMov.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+            dtGridMov.BackgroundColor = SystemColors.ButtonFace;
+            dtGridMov.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dtGridMov.Location = new Point(12, 110);
+            dtGridMov.Name = "dtGridMov";
+            dtGridMov.ReadOnly = true;
+            dtGridMov.RowHeadersVisible = false;
+            dtGridMov.RowTemplate.Height = 25;
+            dtGridMov.Size = new Size(1010, 539);
+            dtGridMov.TabIndex = 1;
+            // 
+            // pbVoltarHome
+            // 
+            pbVoltarHome.BackColor = Color.Transparent;
+            pbVoltarHome.BackgroundImage = (Image)resources.GetObject("pbVoltarHome.BackgroundImage");
+            pbVoltarHome.BackgroundImageLayout = ImageLayout.Stretch;
+            pbVoltarHome.Cursor = Cursors.Hand;
+            pbVoltarHome.Location = new Point(12, 74);
+            pbVoltarHome.Name = "pbVoltarHome";
+            pbVoltarHome.Size = new Size(73, 30);
+            pbVoltarHome.TabIndex = 11;
+            pbVoltarHome.TabStop = false;
+            pbVoltarHome.Click += pbVoltarHome_Click;
             // 
             // FrmHistorico
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1034, 661);
-            this.Controls.Add(this.dtGridMov);
-            this.Controls.Add(this.label1);
-            this.DoubleBuffered = true;
-            this.Name = "FrmHistorico";
-            this.Text = "FrmHistorico";
-            this.Load += new System.EventHandler(this.FrmHistorico_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dtGridMov)).EndInit();
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
+            BackgroundImageLayout = ImageLayout.Stretch;
+            ClientSize = new Size(1034, 661);
+            Controls.Add(pbVoltarHome);
+            Controls.Add(dtGridMov);
+            Controls.Add(label1);
+            DoubleBuffered = true;
+            Name = "FrmHistorico";
+            Text = "FrmHistorico";
+            Load += FrmHistorico_Load;
+            ((System.ComponentModel.ISupportInitialize)dtGridMov).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pbVoltarHome).EndInit();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
 
         private Label label1;
         private DataGridView dtGridMov;
+        private PictureBox pbVoltarHome;
     }
 }
